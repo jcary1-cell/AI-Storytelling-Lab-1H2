@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Storytelling Lab 1: What is AI? (Asynchronous)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            700: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .focus-ring:focus-visible {
+            outline: 3px solid #0284c7;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans leading-relaxed p-4 md:p-8">
+
+    <main id="dp-wrapper" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
+
+        <header class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-6 md:p-10 border-b-4 border-sky-500">
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/20 text-sky-200 border border-sky-400/30">
+                    <i class="fa-solid font-bold fa-clock-rotate-left mr-1.5" aria-hidden="true"></i> Online & Asynchronous Module
+                </span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
+                    <i class="fa-solid fa-hourglass-half mr-1.5" aria-hidden="true"></i> Est. Time: 60-75 Mins (Self-Paced)
+                </span>
+            </div>
+            
+            <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-white mb-2">
+                AI Storytelling Lab 1: What is AI?
+            </h1>
+            <p class="text-slate-300 text-base md:text-lg max-w-3xl">
+                Explore foundational AI concepts through narrative foresight, ethics, and world-building.
+            </p>
+        </header>
+
+        <section aria-label="Essential Resources Quick Links" class="bg-slate-100 p-4 md:p-6 border-b border-slate-200">
+            <h2 class="sr-only">Quick Resource Links</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                <a href="https://notebooklm.google.com/notebook/8326b418-5a02-48a6-9ec3-d034560230a8" 
+                   target="_blank" rel="noopener" 
+                   class="focus-ring flex items-center p-3 bg-white hover:bg-sky-50 border border-slate-300 hover:border-sky-400 rounded-xl transition shadow-sm text-slate-800 font-medium text-sm">
+                    <i class="fa-solid fa-book-open text-sky-600 text-lg mr-2.5" aria-hidden="true"></i>
+                    <span>Aesop's Fables Notebook</span>
+                </a>
+                <a href="https://www.fablereads.com/en/fables-from-around-the-world" 
+                   target="_blank" rel="noopener" 
+                   class="focus-ring flex items-center p-3 bg-white hover:bg-sky-50 border border-slate-300 hover:border-sky-400 rounded-xl transition shadow-sm text-slate-800 font-medium text-sm">
+                    <i class="fa-solid fa-earth-americas text-emerald-600 text-lg mr-2.5" aria-hidden="true"></i>
+                    <span>Global Fables Resource</span>
+                </a>
+                <a href="https://gemini.google.com/gem/dcc821e6350a" 
+                   target="_blank" rel="noopener" 
+                   class="focus-ring flex items-center p-3 bg-white hover:bg-sky-50 border border-slate-300 hover:border-sky-400 rounded-xl transition shadow-sm text-slate-800 font-medium text-sm">
+                    <i class="fa-solid fa-wand-magic-sparkles text-purple-600 text-lg mr-2.5" aria-hidden="true"></i>
+                    <span>Storytelling AI Gem</span>
+                </a>
+                <a href="https://notebooklm.google.com/notebook/c35473f9-d9ee-4120-a528-2ac038d19507" 
+                   target="_blank" rel="noopener" 
+                   class="focus-ring flex items-center p-3 bg-white hover:bg-sky-50 border border-slate-300 hover:border-sky-400 rounded-xl transition shadow-sm text-slate-800 font-medium text-sm">
+                    <i class="fa-solid fa-microchip text-indigo-600 text-lg mr-2.5" aria-hidden="true"></i>
+                    <span>Technical AI Notebook</span>
+                </a>
+            </div>
+            
+            <div class="mt-3">
+                <a href="https://jcary1-cell.github.io/2101gemtutorial/" 
+                   target="_blank" rel="noopener" 
+                   class="focus-ring flex items-center justify-center p-3 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 rounded-xl transition text-indigo-900 font-semibold text-sm text-center">
+                    <i class="fa-solid fa-sliders text-indigo-600 mr-2" aria-hidden="true"></i>
+                    Build Your Own Companion Gem for This Lab (Optional Tutorial)
+                </a>
+            </div>
+        </section>
+
+        <div class="p-6 md:p-8 space-y-8">
+            <section aria-labelledby="lab-overview-heading" class="space-y-4">
+                <h2 id="lab-overview-heading" class="text-2xl font-bold text-slate-900 border-b pb-2 flex items-center">
+                    <i class="fa-solid fa-compass text-sky-600 mr-3" aria-hidden="true"></i>
+                    Welcome & Lab Philosophy
+                </h2>
+                
+                <!-- Embedded Video with Accessible Container -->
+                <div class="bg-slate-900 rounded-2xl overflow-hidden shadow-lg border border-slate-800">
+                    <div class="relative w-full aspect-video">
+                        <iframe title="Video Overview: Introduction to the AI Storytelling Lab" 
+                                src="https://www.youtube.com/embed/oCnxnaVg0bY" 
+                                class="absolute top-0 left-0 w-full h-full border-0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen></iframe>
+                    </div>
+                    <div class="p-3 bg-slate-950 text-slate-400 text-xs flex items-center justify-between flex-wrap gap-2">
+                        <span><i class="fa-solid fa-closed-captioning mr-1.5" aria-hidden="true"></i> Captions available in video settings</span>
+                        <a href="https://www.youtube.com/watch?v=oCnxnaVg0bY" 
+                           target="_blank" 
+                           rel="noopener" 
+                           class="text-sky-400 hover:text-sky-300 underline font-medium flex items-center gap-1 focus-ring rounded">
+                            <span>Watch on YouTube</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="prose max-w-none text-slate-700 space-y-3 pt-2">
+                    <p>
+                        In this self-paced module, you will step away from traditional technical exercises and enter the world of <strong>narrative foresight</strong>. Drawing inspiration from <em>AI and the Art of Being Human</em> by Jeffery Abbot and Andrew Maynard, we believe that understanding the societal impact of AI requires us to <strong>story it</strong>.
+                    </p>
+                    <p>
+                        You will pair with generative AI tools as co-authors to write short, fictional narratives, fables, or future scenarios. Your objective isn't a literary masterpiece—it is to unpack complex human intersections with AI, formulate a clear moral, and distill that moral into a <strong>practical strategy</strong> for your semester-long AI project.
+                    </p>
+                </div>
+
+                <!-- Template Download Card -->
+                <div class="p-5 bg-gradient-to-r from-sky-50 to-indigo-50 border-2 border-sky-200 rounded-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mt-4">
+                    <div class="space-y-1">
+                        <h3 class="text-lg font-bold text-slate-900 flex items-center">
+                            <i class="fa-solid fa-file-word text-sky-600 mr-2" aria-hidden="true"></i>
+                            Step 0: Get Your Individual Lab Template
+                        </h3>
+                        <p class="text-sm text-slate-600">
+                            Clicking below creates a personal copy of the required Google Doc process document.
+                        </p>
+                    </div>
+                    <a href="https://docs.google.com/document/d/1RomDnT3uWT0csKrfrFIlg0T82Sm6PmJFxWiT5QN9SXE/copy" 
+                       target="_blank" rel="noopener" 
+                       class="focus-ring whitespace-nowrap px-5 py-3 bg-sky-600 hover:bg-sky-700 text-white font-semibold text-sm rounded-xl shadow-md transition flex items-center">
+                        <i class="fa-solid fa-copy mr-2" aria-hidden="true"></i> Make My Template Copy
+                    </a>
+                </div>
+            </section>
+
+            <figure class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 shadow-sm">
+                <img class="w-full h-48 sm:h-64 object-cover" 
+                     src="https://instructure.charlotte.edu/courses/261439/files/32760006/download" 
+                     alt="Retro pop-art illustration featuring a woman with wide blue eyes looking astonished on the right, contrasted against a tropical ocean landscape with palm trees under a vivid red sky on the left."
+                     onerror="this.src='https://placehold.co/1200x400/0c4a6e/ffffff?text=AI+Storytelling+Lab+Art'" />
+                <figcaption class="p-3 text-xs text-slate-500 bg-slate-50 border-t border-slate-200 text-center italic">
+                    AI-generated visual narrative: Exploring contrasting human emotional responses to technological shifts.
+                </figcaption>
+            </figure>
+
+            <section aria-labelledby="lab-steps-heading" class="space-y-6">
+                <h2 id="lab-steps-heading" class="text-2xl font-bold text-slate-900 border-b pb-2 flex items-center">
+                    <i class="fa-solid fa-list-check text-sky-600 mr-3" aria-hidden="true"></i>
+                    Self-Paced Lab Steps
+                </h2>
+
+                <div class="space-y-6">
+
+                    <!-- Step 1 Card -->
+                    <div class="p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="w-8 h-8 rounded-full bg-sky-100 text-sky-800 font-bold flex items-center justify-center text-sm">1</span>
+                            <h3 class="text-lg font-bold text-slate-900">Step 1: Briefing & Perspective Selection</h3>
+                        </div>
+                        <div class="prose max-w-none text-slate-600 text-sm space-y-3 pl-11">
+                            <p>
+                                Frame your story around the central seed question: <strong>"What is AI?"</strong> You can explore technical facets like algorithmic bias, GPU infrastructure, or neural network attention mechanisms using the resources above.
+                            </p>
+                            <p>
+                                Next, choose <strong>ONE disciplinary perspective</strong> to guide your storytelling lens:
+                            </p>
+                            
+                            <!-- Interactive Role Grid -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 my-4 not-prose">
+                                <div class="p-3.5 bg-blue-50/70 border border-blue-200 rounded-xl">
+                                    <span class="inline-block px-2 py-0.5 bg-blue-600 text-white text-xs font-bold rounded mb-1">Blue Lens</span>
+                                    <h4 class="font-bold text-slate-900 text-sm">The Builders (STEM/Tech)</h4>
+                                    <p class="text-xs text-slate-600 mt-1">Focus on data mechanics, systemic optimization, edge cases, and hardware limits.</p>
+                                </div>
+                                <div class="p-3.5 bg-emerald-50/70 border border-emerald-200 rounded-xl">
+                                    <span class="inline-block px-2 py-0.5 bg-emerald-600 text-white text-xs font-bold rounded mb-1">Green Lens</span>
+                                    <h4 class="font-bold text-slate-900 text-sm">The Humanists (Arts/Humanities)</h4>
+                                    <p class="text-xs text-slate-600 mt-1">Focus on ethics, lived human experience, aesthetics, narrative truth, and culture.</p>
+                                </div>
+                                <div class="p-3.5 bg-amber-50/70 border border-amber-200 rounded-xl">
+                                    <span class="inline-block px-2 py-0.5 bg-amber-600 text-white text-xs font-bold rounded mb-1">Yellow Lens</span>
+                                    <h4 class="font-bold text-slate-900 text-sm">The Strategists (Business/Law)</h4>
+                                    <p class="text-xs text-slate-600 mt-1">Focus on governance, market scaling, resource trade-offs, and operational viability.</p>
+                                </div>
+                                <div class="p-3.5 bg-rose-50/70 border border-rose-200 rounded-xl">
+                                    <span class="inline-block px-2 py-0.5 bg-rose-600 text-white text-xs font-bold rounded mb-1">Pink Lens</span>
+                                    <h4 class="font-bold text-slate-900 text-sm">The Analysts (Social Sciences)</h4>
+                                    <p class="text-xs text-slate-600 mt-1">Focus on power dynamics, community behaviors, equity, and institutional structures.</p>
+                                </div>
+                                <div class="p-3.5 bg-purple-50/70 border border-purple-200 rounded-xl md:col-span-2 lg:col-span-1">
+                                    <span class="inline-block px-2 py-0.5 bg-purple-600 text-white text-xs font-bold rounded mb-1">Purple Lens</span>
+                                    <h4 class="font-bold text-slate-900 text-sm">Wild Card (Interdisciplinary)</h4>
+                                    <p class="text-xs text-slate-600 mt-1">Synthesize your personal background or bridge connections across multiple disciplines.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 Card -->
+                    <div class="p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="w-8 h-8 rounded-full bg-sky-100 text-sky-800 font-bold flex items-center justify-center text-sm">2</span>
+                            <h3 class="text-lg font-bold text-slate-900">Step 2: Co-Creation & "The Rule of Friction"</h3>
+                        </div>
+                        <div class="prose max-w-none text-slate-600 text-sm space-y-3 pl-11">
+                            <p>
+                                Work with your chosen AI assistant (Gemini or Copilot). Apply <strong>The Rule of Friction</strong>: Never accept the first output! Challenge the AI, inject twists, or shift character motives.
+                            </p>
+                            
+                            <div class="not-prose my-4 p-4 bg-slate-900 text-slate-100 rounded-xl space-y-3 border border-slate-800">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs font-bold text-sky-400 uppercase tracking-wider">
+                                        <i class="fa-solid fa-terminal mr-1.5"></i> Interactive Prompting Workbench
+                                    </span>
+                                    <span class="text-xs text-slate-400">Click to copy prompt to clipboard</span>
+                                </div>
+                                
+                                <div class="p-3 bg-slate-800/80 rounded-lg border border-slate-700/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                                    <code class="text-xs font-mono text-emerald-300 leading-relaxed">
+                                        "Act as a science fiction author. Write a 400-word fable about a community encountering an AI system that predicts resource shortages. Apply a [Insert Your Lens, e.g., Humanist] perspective."
+                                    </code>
+                                    <button onclick="copyPromptText(this)" class="focus-ring whitespace-nowrap px-3 py-1.5 bg-sky-600 hover:bg-sky-500 text-white rounded text-xs font-semibold transition self-end sm:self-center">
+                                        <i class="fa-regular fa-copy mr-1"></i> Copy Prompt
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 Card -->
+                    <div class="p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="w-8 h-8 rounded-full bg-sky-100 text-sky-800 font-bold flex items-center justify-center text-sm">3</span>
+                            <h3 class="text-lg font-bold text-slate-900">Step 3: Extract the Moral & Design Strategy</h3>
+                        </div>
+                        <div class="prose max-w-none text-slate-600 text-sm space-y-2 pl-11">
+                            <p>
+                                Pause and reflect on your finished narrative:
+                            </p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li><strong>The Moral:</strong> What fundamental lesson does this fable illustrate about human-AI interaction?</li>
+                                <li><strong>The Strategy:</strong> Translate that moral into a concrete design principle or risk mitigation strategy for your semester project.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 Card -->
+                    <div class="p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="w-8 h-8 rounded-full bg-sky-100 text-sky-800 font-bold flex items-center justify-center text-sm">4</span>
+                            <h3 class="text-lg font-bold text-slate-900">Step 4: Asynchronous Gallery Walk on Padlet</h3>
+                        </div>
+                        <div class="prose max-w-none text-slate-600 text-sm space-y-2 pl-11">
+                            <p>
+                                Post your finalized story/fable directly onto our class Padlet board embedded below. 
+                            </p>
+                            <p>
+                                <strong>Peer Interaction Requirement:</strong> Read at least <strong>two classmates' stories</strong> on the board. Leave constructive comments noting how their disciplinary lens influenced their narrative moral or strategy.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 Card -->
+                    <div class="p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="w-8 h-8 rounded-full bg-sky-100 text-sky-800 font-bold flex items-center justify-center text-sm">5</span>
+                            <h3 class="text-lg font-bold text-slate-900">Step 5: Canvas Process Submission</h3>
+                        </div>
+                        <div class="prose max-w-none text-slate-600 text-sm space-y-2 pl-11">
+                            <p>
+                                Paste your shareable Google Doc link (your template with transcript history, lens selection, and reflection) into the Canvas assignment page for credit.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section aria-labelledby="checklist-heading" class="p-6 bg-slate-900 text-white rounded-2xl shadow-md border border-slate-800">
+                <h2 id="checklist-heading" class="text-xl font-bold mb-4 flex items-center text-sky-400">
+                    <i class="fa-solid fa-square-check mr-2" aria-hidden="true"></i> Asynchronous Completion Checklist
+                </h2>
+                <div class="space-y-3 text-sm">
+                    <label class="flex items-center gap-3 p-3 bg-slate-800/80 rounded-xl cursor-pointer hover:bg-slate-800 transition">
+                        <input type="checkbox" class="w-5 h-5 rounded border-slate-600 text-sky-500 focus:ring-sky-400">
+                        <span>Created my copy of the Google Doc Template</span>
+                    </label>
+                    <label class="flex items-center gap-3 p-3 bg-slate-800/80 rounded-xl cursor-pointer hover:bg-slate-800 transition">
+                        <input type="checkbox" class="w-5 h-5 rounded border-slate-600 text-sky-500 focus:ring-sky-400">
+                        <span>Selected my Disciplinary Lens (Blue, Green, Yellow, Pink, or Purple)</span>
+                    </label>
+                    <label class="flex items-center gap-3 p-3 bg-slate-800/80 rounded-xl cursor-pointer hover:bg-slate-800 transition">
+                        <input type="checkbox" class="w-5 h-5 rounded border-slate-600 text-sky-500 focus:ring-sky-400">
+                        <span>Co-created narrative with AI and documented prompt history in template</span>
+                    </label>
+                    <label class="flex items-center gap-3 p-3 bg-slate-800/80 rounded-xl cursor-pointer hover:bg-slate-800 transition">
+                        <input type="checkbox" class="w-5 h-5 rounded border-slate-600 text-sky-500 focus:ring-sky-400">
+                        <span>Posted finalized story to Padlet Board & commented on 2 peers' stories</span>
+                    </label>
+                    <label class="flex items-center gap-3 p-3 bg-slate-800/80 rounded-xl cursor-pointer hover:bg-slate-800 transition">
+                        <input type="checkbox" class="w-5 h-5 rounded border-slate-600 text-sky-500 focus:ring-sky-400">
+                        <span>Submitted Process Document shareable link into Canvas</span>
+                    </label>
+                </div>
+            </section>
+
+            <section aria-labelledby="padlet-heading" class="space-y-4">
+                <div class="flex items-center justify-between border-b pb-2">
+                    <h2 id="padlet-heading" class="text-2xl font-bold text-slate-900 flex items-center">
+                        <i class="fa-solid fa-cubes-stacked text-sky-600 mr-3" aria-hidden="true"></i>
+                        HCAI Storytelling Collection
+                    </h2>
+                    <a href="https://padlet.com/jcary1/hcai-storytelling-lab-a-collection-of-ai-stories-myths-fable-rgghxpwrxv2htgu3" 
+                       target="_blank" rel="noopener" 
+                       class="text-xs font-semibold text-sky-600 hover:text-sky-800 flex items-center">
+                        Open in Padlet <i class="fa-solid fa-arrow-up-right-from-square ml-1" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="rounded-2xl overflow-hidden border border-slate-300 shadow-sm bg-slate-100">
+                    <iframe title="HCAI Class Storytelling Collection Padlet Board" 
+                            src="https://padlet.com/embed/rgghxpwrxv2htgu3" 
+                            class="w-full h-[600px] border-0" 
+                            loading="lazy" 
+                            allow="camera;microphone;geolocation;display-capture;clipboard-write"></iframe>
+                </div>
+            </section>
+
+        </div>
+
+        <footer class="bg-slate-100 p-6 border-t border-slate-200 text-center text-xs text-slate-500">
+            <p>Human-Centered AI (HCAI) Course Module • Self-Paced Asynchronous Adaptation</p>
+        </footer>
+
+    </main>
+
+    <script>
+        function copyPromptText(btnElement) {
+            const promptCode = btnElement.previousElementSibling.textContent.trim();
+            
+            // Fallback execCommand clipboard copying for Canvas iframe safety
+            const tempInput = document.createElement('textarea');
+            tempInput.value = promptCode;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            
+            try {
+                document.execCommand('copy');
+                const originalText = btnElement.innerHTML;
+                btnElement.innerHTML = '<i class="fa-solid fa-check mr-1"></i> Copied!';
+                btnElement.classList.replace('bg-sky-600', 'bg-emerald-600');
+                btnElement.classList.replace('hover:bg-sky-500', 'hover:bg-emerald-500');
+                
+                setTimeout(() => {
+                    btnElement.innerHTML = originalText;
+                    btnElement.classList.replace('bg-emerald-600', 'bg-sky-600');
+                    btnElement.classList.replace('hover:bg-emerald-500', 'hover:bg-sky-500');
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy prompt text: ', err);
+            } finally {
+                document.body.removeChild(tempInput);
+            }
+        }
+    </script>
+</body>
+</html>
